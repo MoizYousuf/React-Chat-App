@@ -16,7 +16,6 @@ export default class Login extends Component {
         }
     }
     checkData(){
-        console.log(this.state);
         firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
         .then((user)=>{ 
           localStorage.setItem('user', user.uid); this.props.history.push('/Home') })

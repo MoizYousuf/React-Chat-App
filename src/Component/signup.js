@@ -16,7 +16,6 @@ class Signup extends Component {
   }
 
   firebaseSignup = () => {
-    let Detail = this.state;
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         let uid = user.uid;
@@ -39,7 +38,6 @@ class Signup extends Component {
           .set(this.state)
           .then(res => {
             this.props.history.push("/");
-            console.log(res);
           });
         var user = firebase.auth().currentUser;
 
@@ -56,12 +54,11 @@ class Signup extends Component {
       })
 
       .catch(function(error) {});
-    console.log(this.state);
   };
 
   render() {
     return (
-      <div>
+      <div style={styles.body}>
         {/* <button onClick={() => this.props.history.push('/')}>{}</button> */}
         <Card style={styles.card}>
           <h1>Sign up</h1>
@@ -107,9 +104,12 @@ class Signup extends Component {
   }
 }
 const styles = {
+  body:{
+    marginTop: "20%"
+  },
   card: {
-    minWidth: 100,
-    width: 600,
+    minWidth: "20%",
+    width: "32%",
     margin: "0 auto",
     textAlign: "center"
   }

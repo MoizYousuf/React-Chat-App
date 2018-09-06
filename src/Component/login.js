@@ -17,19 +17,18 @@ class login extends Component {
     firebase
       .auth()
       .signInWithEmailAndPassword(this.state.Email, this.state.Password)
-      .then((success) =>{
-        this.props.history.push("/home")
+      .then(success => {
+        this.props.history.push("/home");
       })
       .catch(function(error) {
         // Handle Errors here.
         var errorMessage = error.message;
-        console.log(errorMessage);
         // ...
       });
   };
   render() {
     return (
-      <div>
+      <div style={styles.body}>
         <div>
           <Card style={styles.card}>
             <h1>Log in</h1>
@@ -71,10 +70,16 @@ class login extends Component {
 }
 const styles = {
   card: {
-    minWidth: 100,
-    width: 600,
+    minWidth: "20%",
+    width: "32%",
+    marginTop:"60%",
     margin: "0 auto",
     textAlign: "center"
+  },
+  body: {
+    height: "100%",
+    width: "100%",
+    marginTop:"20%",
   }
 };
 export default login;

@@ -28,7 +28,6 @@ export default class DashBoard extends Component{
                     let dataArray= [];
                     // this.setState({ allUsers: data }, () => {
                     for(let key in data) {
-                        // console.log(data[key])
                         let obj = data[key];
                         obj.key = key;
                         dataArray.push(obj)

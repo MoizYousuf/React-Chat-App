@@ -7,7 +7,6 @@ export const UserService = {
             firebase.database().ref("SignUp/"+comment).on("value", (snapshot) => {
                 let data = snapshot.val();
                 resolve(data);
-                console.log(resolve(data))
             })
     
         })
